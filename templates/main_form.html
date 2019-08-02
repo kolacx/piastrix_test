@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block form %}
+	<form action="/make_order" method="POST" accept-charset="UTF-8">
+		<input type="hidden" name="shop_order_id" value="101">
+
+		<label for='amount'>amount</label>
+		<input type="number" name="amount" id="amount" step="0.01" >
+
+		<label for='currency'>currency</label>
+		<select name='currency' id="currency">
+			<option value='978'>EUR</option>
+			<option value='840'>USD</option>
+			<option value='643'>RUB</option>
+		</select>
+
+		<label for='desc'>Descriprion</label>
+		<textarea name="description" id="desc"></textarea>
+
+		<input type="submit" name="send" value="Отправить">
+	</form>
+{% endblock %}
